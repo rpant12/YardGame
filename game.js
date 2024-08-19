@@ -77,7 +77,7 @@ choices.forEach((choice) => {
             sound.play();
         }
         else {
-            var sound2 = new Audio("audio/buzzer.mp3")
+            var sound2 = new Audio("audio/buzzer.mp3") //working??
             sound2.play();
         }
 
