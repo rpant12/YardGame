@@ -28,6 +28,7 @@ fetch('questions.json')
 //CONSTANTS
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 40;
+var duration = 8000;
 console.log(questions);
 
 startGame = () => {
@@ -52,7 +53,7 @@ getNewQuestion = () => {
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
     document.getElementById("video").innerHTML = '<iframe width="750" height="422" src="' + currentQuestion.link + '" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>';
-
+    duration = currentQuestion.duration + 2000;
 
     choices.forEach((choice) => {
         const number = choice.dataset['number'];
@@ -77,23 +78,23 @@ choices.forEach((choice) => {
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
             var sound = new Audio("audio/ding.mp3")
-            console.log("righ")
+            console.log("right")
             sound.play();
         }
         else {
             var sound2 = new Audio("audio/buzzer.mp3");
-            sound2.volume = 0.2;
+            sound2.volume = 0.1;
             console.log(sound2.volume); // should work now??
             sound2.play();
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
-
+        console.log(duration);
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
             openPop();
-        }, 8000);
+        }, duration);
     });
 });
 
