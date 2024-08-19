@@ -77,10 +77,13 @@ choices.forEach((choice) => {
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
             var sound = new Audio("audio/ding.mp3")
+            console.log("righ")
             sound.play();
         }
         else {
-            var sound2 = new Audio("audio/buzzer.mp3") //working??
+            var sound2 = new Audio("audio/buzzer.mp3");
+            sound2.volume = 0.2;
+            console.log(sound2.volume);
             sound2.play();
         }
 
