@@ -83,7 +83,7 @@ choices.forEach((choice) => {
         else {
             var sound2 = new Audio("audio/buzzer.mp3");
             sound2.volume = 0.2;
-            console.log(sound2.volume);
+            console.log(sound2.volume); // should work now??
             sound2.play();
         }
 
