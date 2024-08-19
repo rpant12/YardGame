@@ -52,8 +52,7 @@ getNewQuestion = () => {
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
     document.getElementById("video").innerHTML = '<iframe width="750" height="422" src="' + currentQuestion.link + '" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>';
-    console.log('<iframe width="560" height="315" src="' + currentQuestion.link + '" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>')
-    
+
 
     choices.forEach((choice) => {
         const number = choice.dataset['number'];
@@ -89,9 +88,9 @@ choices.forEach((choice) => {
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
-            openPop();
             getNewQuestion();
-        }, 10000);
+            openPop();
+        }, 8000);
     });
 });
 
