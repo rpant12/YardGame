@@ -33,13 +33,31 @@
         <h2 id="question"></h2>
         <div id = "options">
           <center>
-        <img src = "images/aiden.png" height = "300px" width = "150px"  class="choice-text" data-number="1" \>
-        <img src = "images/nick.png" height = "300px" width = "150px" class="choice-text" data-number="2">
-        <img src = "images/slime.png" height = "300px" width = "150px"  class="choice-text" data-number="3">
-        <img src = "images/ludwig.png" height = "300px" width = "150px" class="choice-text" data-number="4">
+        <img src = "images/aiden.png" height = "300px" width = "150px"  class="choice-text" data-number="1" onclick = "openPop()">
+        <img src = "images/nick.png" height = "300px" width = "150px" class="choice-text" data-number="2" onclick = "openPop()">
+        <img src = "images/slime.png" height = "300px" width = "150px"  class="choice-text" data-number="3" onclick = "openPop()">
+        <img src = "images/ludwig.png" height = "300px" width = "150px" class="choice-text" data-number="4" onclick = "openPop()">
+        <div id="popupDialog">
+          <div id="video"></div>
+          <button onclick="openPop()"> Close 
+          </button>
+      </div>
       </center>
       </div>
     </div>
+    <script>
+      function openPop() {
+          const popDialog =
+              document.getElementById(
+                  "popupDialog"
+              );
+          popDialog.style.visibility =
+              popDialog.style.visibility ===
+              "visible"
+                  ? "hidden"
+                  : "visible";
+      }
+  </script>
     <script src="game.js"></script>
   </body>
 </html>
