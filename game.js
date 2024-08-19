@@ -53,7 +53,7 @@ getNewQuestion = () => {
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
     document.getElementById("video").innerHTML = '<iframe width="750" height="422" src="' + currentQuestion.link + '" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>';
-    duration = currentQuestion.duration + 2000; // new add alert
+    duration = currentQuestion.duration + 4000; // new add alert
 
     choices.forEach((choice) => {
         const number = choice.dataset['number'];
