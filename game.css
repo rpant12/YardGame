@@ -21,8 +21,12 @@
 }
 
 .choice-text {
-  padding: 1.5rem;
-  width: 100%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.options {
+  max-width: 100rem; 
 }
 
 .correct {
